@@ -176,8 +176,16 @@ const Register = () => {
 
                   <div className='form-control'>
                      <button className='form-button' type='submit'>
-                        Register
+                        Submit
                      </button>
+                  </div>
+                  <div className='error_message'>
+                     {Object.keys(errors).length ? (
+                        <p>
+                           invalid form values,check errors and re-submit the
+                           form.
+                        </p>
+                     ) : null}
                   </div>
                </div>
             </form>

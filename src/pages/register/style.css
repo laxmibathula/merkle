@@ -93,3 +93,8 @@
    border-color: rgb(5, 118, 170);
    cursor: pointer;
 }
+
+.error_message {
+   color: red;
+   font-size: 23px;
+}
