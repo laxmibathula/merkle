@@ -3,13 +3,6 @@ const router = express.Router();
 const users = require("./users-schema");
 
 router.post("/register", async (req, res) => {
-   console.log(req.body);
-   // WRITE validation here
-   // e.g:
-   if (!req.body.details.city) {
-      res.status(400).send("Invalid city");
-   }
-
    const user = new users({
       firstname: req.body.details.firstName,
       lastname: req.body.details.lastName,
