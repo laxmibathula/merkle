@@ -1,0 +1,26 @@
+.confirm_container {
+   margin-top: 50px;
+   height: 30vh;
+   color: orange;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+.page-title {
+   color: orange;
+}
+
+.confirm-button {
+   width: 250px;
+   color: orange;
+   padding: 10px;
+   border: 1px solid orange;
+   border-radius: 4px;
+   font-size: 20px;
+}
+.confirm-button:hover {
+   border-color: rgba(5, 96, 201, 0.507);
+   cursor: pointer;
+}
