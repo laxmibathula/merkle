@@ -30,27 +30,26 @@ const useController = (validate) => {
    const submitHandler = (e) => {
       e.preventDefault();
       setErrors(validate(details));
-
-      if (Object.keys(errors).length || isSubmitting) {
-         return;
-      }
-
       setIsSubmitting(true);
-
-      axios({
-         method: "post",
-         url: "/register",
-         data: { details },
-      })
-         .then((response) => {
-            if (response.status === 200) {
-               return history.push("/confirmation");
-            }
-         })
-         .catch((error) => {
-            console.log(error);
-         });
    };
+
+   useEffect(() => {
+      if (Object.keys(errors).length === 0 && isSubmitting) {
+         axios({
+            method: "post",
+            url: "/register",
+            data: { details },
+         })
+            .then((response) => {
+               if (response.status === 200) {
+                  return history.push("/confirmation");
+               }
+            })
+            .catch((error) => {
+               console.log(error);
+            });
+      }
+   }, [errors]);
 
    return { submitHandler, onChangeHandler, details, errors };
 };
